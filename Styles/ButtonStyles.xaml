@@ -1,0 +1,229 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:awesome="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp">
+
+
+    <Style x:Key="menuButton" TargetType="RadioButton">
+        <!--style for normal button!-->
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="-5,0,0,5"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource color3}"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderThickness="4,0,0,0"
+                            BorderBrush="{TemplateBinding BorderBrush}">
+                        <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                    </Border>
+                    
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!--mouseover-->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Height" Value="50"/>
+                <Setter Property="Margin" Value="0,0,0,5"/>
+                <Setter Property="Background" Value="{StaticResource color2}"/>
+                <Setter Property="Foreground" Value="{StaticResource color3}"/>
+                <Setter Property="BorderBrush" Value="{Binding Path=Tag, RelativeSource={RelativeSource Mode= Self}}"/>
+            </Trigger>
+            <!--click-->
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Height" Value="50"/>
+                <Setter Property="Margin" Value="0,0,0,5"/>
+                <Setter Property="Background" Value="{StaticResource color3}"/>
+                <Setter Property="Foreground" Value="{StaticResource color4}"/>
+                <Setter Property="BorderBrush" Value="{Binding Path=Tag, RelativeSource={RelativeSource Mode= Self}}"/>
+            </Trigger>
+
+            
+        </Style.Triggers>
+    </Style>
+    
+    <!-- menu button icon style -->
+    <Style x:Key="menuButtonIcon" TargetType="awesome:IconImage">
+
+        <Setter Property="Foreground" Value="{Binding Path=Tag, RelativeSource={RelativeSource AncestorType=RadioButton}}"/>
+        <Setter Property="Width" Value="22"/>
+        <Setter Property="Height" Value="22" />
+        <Setter Property="Margin" Value="25,0,30,0"/>
+    </Style>
+    
+    
+    
+    
+    
+    <!--Menu Button Text-->
+    <Style x:Key="menuButtonText" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{Binding Path=Tag, RelativeSource={RelativeSource AncestorType=RadioButton}}"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="FontSize" Value="13.5"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+       
+    </Style>
+    
+    <!--Close Button Style-->
+    <Style x:Key="exitButton" TargetType="Button">
+         <!--style for normal button!-->
+      
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource color3}"/>
+       
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                        CornerRadius="0">
+                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+         <!--mouseover-->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+
+                <Setter Property="Background" Value="#d53670"/>
+                <Setter Property="Foreground" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>
+                
+            </Trigger>
+         
+        </Style.Triggers>
+    </Style>
+    <!--close button icon style -->
+    <Style x:Key="closeButtonIcon" TargetType="awesome:IconImage">
+
+        <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+        <Setter Property="Width" Value="9"/>
+        <Setter Property="Height" Value="9" />
+        
+    </Style>
+
+    <!--User views Button Style-->
+    <Style x:Key="userviewButton" TargetType="Button">
+        <!--style for normal button!-->
+        <Setter Property="Width" Value="25"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource color6}"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                   >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!--mouseover-->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>
+
+            </Trigger>
+
+        </Style.Triggers>
+    </Style>
+    <!--uservuew button icon style -->
+    <Style x:Key="userviewButtonIcon" TargetType="awesome:IconImage">
+
+        <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+        <Setter Property="Width" Value="16"/>
+        <Setter Property="Height" Value="16" />
+
+    </Style>
+
+
+
+
+    <!--sliding menu Button Style-->
+    <Style x:Key="slidingButton" TargetType="Button">
+        <!--style for normal button!-->
+        <Setter Property="Width" Value="25"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource color6}"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                 >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!--mouseover-->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+
+
+                <Setter Property="Foreground" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>
+                <Setter Property="Background" Value="{StaticResource color2}"/>
+
+            </Trigger>
+
+        </Style.Triggers>
+    </Style>
+    <!--sliding button icon style -->
+    <Style x:Key="slidingButtonIcon" TargetType="awesome:IconImage">
+
+        <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+        <Setter Property="Width" Value="18"/>
+        <Setter Property="Height" Value="18" />
+
+    </Style>
+
+    <!--bmi Button Style-->
+    <Style x:Key="bmiButton" TargetType="Button">
+        <!--style for normal button!-->
+
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource colorgray1}"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                        CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!--mouseover-->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+
+                <Setter Property="Background" Value="#d53670"/>
+                <Setter Property="Foreground" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>
+
+            </Trigger>
+
+        </Style.Triggers>
+    </Style>
+
+
+
+
+
+</ResourceDictionary>

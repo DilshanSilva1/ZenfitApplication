@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="Draft2.View.MailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Draft2.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" >
+    <Grid>
+        <StackPanel Margin="20,20,20,20"/>
+        <TextBox x:Name="MessageBox1" Text=""
+            Style="{StaticResource TBLOGIN}"
+                             Width="200"
+            Margin="300,193,300,229">
+            <TextBox.Background>
+                <ImageBrush AlignmentX="Left" ImageSource="C:\Users\dilsh\Downloads\mail.png" Stretch="Uniform" TileMode="None"/>
+            </TextBox.Background>
+
+        </TextBox>
+        <ComboBox x:Name="PhoneComboBox"
+          DisplayMemberPath="Name"  SelectedValuePath="Phone" Opacity="0.2"
+                 
+          
+          Width="200" Height="30" Margin="300,105,300,315" FontFamily="Bahnschrift" FontSize="16" />
+        <Button 
+            x:Name="updateBTN"
+            BorderThickness="0"
+            Content="SEND SMS"
+            Foreground="White"
+            FontSize="20"
+            Cursor="Hand"
+            FontFamily="Haettenschweiler" Margin="275,262,275,148" Click="updateBTN_Click" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FF383838"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#d53670"/>
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="150" Height="40"
+                        CornerRadius="20" 
+                        Background="{TemplateBinding Background}">
+
+                        <ContentPresenter VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+
+                    </Border>
+
+
+                </ControlTemplate>
+            </Button.Template>
+
+
+
+        </Button>
+    </Grid>
+</UserControl>

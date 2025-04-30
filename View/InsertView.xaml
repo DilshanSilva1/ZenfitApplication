@@ -1,0 +1,256 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Draft2.View"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" x:Class="Draft2.View.InsertView"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" >
+    <Grid>
+        <Button 
+           
+            BorderThickness="0"
+            Content="ADD"
+            Foreground="White"
+            FontSize="20"
+            Cursor="Hand"
+            FontFamily="Haettenschweiler" Margin="4,379,546,31" Click="addClick" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FF383838"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#d53670"/>
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="150" Height="40"
+                        CornerRadius="20" 
+                        Background="{TemplateBinding Background}">
+
+                        <ContentPresenter VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+
+                    </Border>
+
+
+                </ControlTemplate>
+            </Button.Template>
+
+
+
+        </Button>
+        <TextBox x:Name="nameTB"
+            Style="{StaticResource TBLOGIN}"
+            Text=""
+            Margin="185,2,490,420">
+            <TextBox.Background>
+                <ImageBrush AlignmentX="Left" ImageSource="C:\Users\dilsh\Downloads\card.png" Stretch="Uniform" TileMode="None"/>
+            </TextBox.Background>
+
+        </TextBox>
+        <TextBox x:Name="phoneTB"
+            Style="{StaticResource TBLOGIN}"
+            Text=""
+             Margin="185,72,490,350">
+            <TextBox.Background>
+                <ImageBrush AlignmentX="Left" ImageSource="C:\Users\dilsh\Downloads\telephone.png" Stretch="Uniform" TileMode="None"/>
+            </TextBox.Background>
+
+        </TextBox>
+        <TextBox x:Name="emailTB"
+            Style="{StaticResource TBLOGIN}"
+            Text=""
+           Margin="186,142,489,280">
+            <TextBox.Background>
+                <ImageBrush AlignmentX="Left" ImageSource="C:\Users\dilsh\Downloads\mail.png" Stretch="Uniform" TileMode="None"/>
+            </TextBox.Background>
+
+        </TextBox>
+        <TextBox x:Name="weightTB"
+            Style="{StaticResource TBLOGIN}"
+            Text=""
+            Margin="186,210,489,212">
+            <TextBox.Background>
+                <ImageBrush AlignmentX="Left" ImageSource="C:\Users\dilsh\Downloads\weight.png" Stretch="Uniform" TileMode="None"/>
+            </TextBox.Background>
+
+        </TextBox>
+        <TextBox x:Name="heightTB"
+            Style="{StaticResource TBLOGIN}"
+            Text=""
+            Margin="186,270,488,152">
+            <TextBox.Background>
+                <ImageBrush AlignmentX="Left" ImageSource="C:\Users\dilsh\Downloads\ruler.png" Stretch="Uniform" TileMode="None"/>
+            </TextBox.Background>
+
+        </TextBox>
+        <StackPanel Orientation="Horizontal"
+    Margin="75,2,662,420" RenderTransformOrigin="0.5,0.5">
+
+            <TextBlock Text="Name"
+                Foreground="White"
+                FontSize="25"
+                Height="26"
+                Margin="10,0,0,0"
+                FontFamily="Haettenschweiler"
+                                                                />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+            Margin="75,70,662,352" RenderTransformOrigin="0.5,0.5">
+
+            <TextBlock Text="Phone"
+                Foreground="White"
+                HorizontalAlignment="Center"
+                FontSize="25"
+                Height="25"
+                Margin="10,0,0,0"
+                FontFamily="Haettenschweiler"
+                                                                />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+            Margin="77,141,660,281" RenderTransformOrigin="0.5,0.5">
+
+            <TextBlock Text="Email"
+                Foreground="White"
+                FontSize="25"
+                Height="26"
+                Margin="10,0,0,0"
+                FontFamily="Haettenschweiler"
+                                                                />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+            Margin="77,207,625,215" RenderTransformOrigin="0.5,0.5">
+
+            <TextBlock Text="Weight(KG)"
+                Foreground="White"
+                FontSize="25"
+                Height="24"
+                Margin="10,0,0,0"
+                FontFamily="Haettenschweiler"
+                                                                />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+            Margin="78,269,625,153" RenderTransformOrigin="0.5,0.5">
+
+            <TextBlock Text="Height(cm)"
+                Foreground="White"
+                HorizontalAlignment="Center"
+                FontSize="25"
+                Height="25"
+                Margin="10,0,0,0"
+                FontFamily="Haettenschweiler"
+                                                                />
+        </StackPanel>
+        <Button 
+           
+            BorderThickness="0"
+            Content="CLEAR"
+            Foreground="White"
+            FontSize="20"
+            Cursor="Hand"
+            FontFamily="Haettenschweiler" Margin="204,379,346,31" Click="clearCust"  >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FF383838"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#d53670"/>
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="150" Height="40"
+                        CornerRadius="20" 
+                        Background="{TemplateBinding Background}">
+
+                        <ContentPresenter VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+
+                    </Border>
+
+
+                </ControlTemplate>
+            </Button.Template>
+
+
+
+        </Button>
+        <Button 
+            x:Name="updateBTN"
+            BorderThickness="0"
+            Content="UPDATE"
+            Foreground="White"
+            FontSize="20"
+            Cursor="Hand"
+            FontFamily="Haettenschweiler" Margin="536,338,14,72" Click="updateBTN_Click" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FF383838"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#d53670"/>
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="150" Height="40"
+                        CornerRadius="20" 
+                        Background="{TemplateBinding Background}">
+
+                        <ContentPresenter VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+
+                    </Border>
+
+
+                </ControlTemplate>
+            </Button.Template>
+
+
+
+        </Button>
+        <TextBox x:Name="updateTB"
+            Style="{StaticResource TBLOGIN}"
+            Text=""
+            Margin="610,270,88,152">
+            <TextBox.Background>
+                <ImageBrush AlignmentX="Left" ImageSource="C:\Users\dilsh\Downloads\icons8-user-32.png" Stretch="Uniform" TileMode="None"/>
+            </TextBox.Background>
+
+        </TextBox>
+        <TextBox x:Name="monthlyTB"
+            Style="{StaticResource TBLOGIN}"
+            Text=""
+            Margin="186,323,488,99">
+            <TextBox.Background>
+                <ImageBrush AlignmentX="Left" ImageSource="C:\Users\dilsh\Downloads\ruler.png" Stretch="Uniform" TileMode="None"/>
+            </TextBox.Background>
+
+        </TextBox>
+        <StackPanel Orientation="Horizontal"
+            Margin="78,322,625,100" RenderTransformOrigin="0.5,0.5">
+
+            <TextBlock Text="Income(m)"
+                Foreground="White"
+                HorizontalAlignment="Center"
+                FontSize="25"
+                Height="25"
+                Margin="10,0,0,0"
+                FontFamily="Haettenschweiler"
+                                                                />
+        </StackPanel>
+
+    </Grid>
+</UserControl>

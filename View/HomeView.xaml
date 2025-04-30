@@ -1,0 +1,126 @@
+﻿<UserControl x:Class="Draft2.View.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             xmlns:local="clr-namespace:Draft2.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+     
+             >
+
+
+
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition>
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid>
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                        <lvc:CartesianChart x:Name="mychart" Series="{Binding SeriesCollection}" LegendLocation="Left">
+                            <lvc:CartesianChart.AxisX>
+                                <lvc:Axis Title="X" Labels="{Binding BarLabels}"></lvc:Axis>
+                            </lvc:CartesianChart.AxisX>
+                            <lvc:CartesianChart.AxisY>
+                                <lvc:Axis Title="Y" LabelFormatter="{Binding Formatter}"></lvc:Axis>
+                            </lvc:CartesianChart.AxisY>
+                        </lvc:CartesianChart>
+                    </ScrollViewer>
+                </Grid>
+               
+            </Grid>
+            <Grid Grid.Row="1">
+                <Border Style="{StaticResource borderstyle1}"
+             CornerRadius="10"
+             Background="{StaticResource colorgray1}"
+                 
+                 Margin="80,20,80,20"
+                 Effect="{StaticResource CardShadowEffect}"
+Grid.Row="0"
+ 
+                 
+ 
+ >
+                    <StackPanel   Background="Transparent">
+
+
+                        <Label Background="Transparent" Margin="0,80,0,0" x:Name="MonthlyLabel" Height="50" FontFamily="Haettenschweiler" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="36" Foreground="#FFF9F9F9" />
+                        <Label Background="Transparent" Height="48" FontFamily="Haettenschweiler" Content="MONTHLY INCOME" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" Foreground="#FFF9F9F9"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1" Background="Transparent" Margin="0,0,0,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="29*"/>
+                <RowDefinition Height="31*"/>
+            </Grid.RowDefinitions>
+            <Border Style="{StaticResource borderstyle1}"
+                CornerRadius="10"
+                Background="{StaticResource colorgray1}"
+                    
+                    Margin="80,0,80,0"
+                    Effect="{StaticResource CardShadowEffect}"
+   Grid.Row="0"
+    
+                    
+    
+    >
+                <StackPanel   Background="Transparent">
+
+
+                    <Label Background="Transparent" Margin="0,40,0,0" x:Name="CustLabel" Height="50" FontFamily="Haettenschweiler" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="36" Foreground="#FFF9F9F9" />
+                    <Label Background="Transparent" Height="48" FontFamily="Haettenschweiler" Content="CUSTOMERS" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" Foreground="#FFF9F9F9"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{StaticResource borderstyle1}"
+             CornerRadius="10"
+             Background="{StaticResource colorgray1}"
+                 
+                 Margin="80,10,80,0"
+                 Effect="{StaticResource CardShadowEffect}"
+                Grid.Row="1"
+ 
+                 
+ 
+ >
+                <StackPanel   Background="Transparent">
+
+
+                    <Label Background="Transparent" Margin="0,40,0,0" x:Name="SessLabel" Height="50" FontFamily="Haettenschweiler" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="36" Foreground="#FFF9F9F9" />
+                    <Label Background="Transparent" Height="48"  FontFamily="Haettenschweiler" Content="SESSIONS" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" Foreground="#FFF9F9F9"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{StaticResource borderstyle1}"
+            CornerRadius="10"
+            Background="{StaticResource colorgray1}"
+                Margin="80,11,80,0"
+                Effect="{StaticResource CardShadowEffect}"
+               Grid.Row="2"
+
+                
+
+>
+                <StackPanel   Background="Transparent" Margin="0,0,0,10">
+
+                    <Button x:Name="btnLeft" Content="&lt;"  Click="btnLeft_Click"  Foreground="White" Height="30" FontFamily="Haettenschweiler" FontSize="22"  Style="{StaticResource bmiButton}" />
+                    <Label  Background="Transparent" Margin="0,0,0,0" x:Name="BMILabel" Height="80" FontFamily="Haettenschweiler" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="36" Foreground="#FFF9F9F9" VerticalAlignment="Center" />
+                    <Button x:Name="btnRight" Grid.Column="2" Content=">"  Click="btnRight_Click" Height="30" Foreground="#FFFCFCFC" FontFamily="Haettenschweiler" FontSize="22"  Style="{StaticResource bmiButton}" />
+                </StackPanel>
+            </Border>
+        </Grid>
+
+    </Grid>
+</UserControl>

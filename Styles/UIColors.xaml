@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--background colors-->
+    <Color x:Key="primarybgcolor1">black</Color>
+    <Color x:Key="primarybgcolor2">#2a292a</Color>
+    <Color x:Key="secondarybgcolor1">#a9aca9</Color>
+    <Color x:Key="secondarybgcolor2">#4a4e69</Color>
+    <Color x:Key="secondarybgcolor3">#9a8a98</Color>
+    <Color x:Key="secondarybgcolor4">#60495a</Color>
+    <Color x:Key="secondarybgcolor5">#3f3244</Color>
+    <Color x:Key="secondarybgcolor6">#2f2235</Color>
+
+    <!--border colors-->
+
+    <Color x:Key="bordercolor1">#e8e8e4</Color>
+    <Color x:Key="bordercolor2">#ece4db</Color>
+
+    <!-- colors pallette-->
+
+    <SolidColorBrush x:Key="color1" Color="#a9aca9"/>
+    <SolidColorBrush x:Key="color2" Color="#3f3244"/>
+    <SolidColorBrush x:Key="color3" Color="#2f2235"/>
+    <SolidColorBrush x:Key="color4" Color="#F8EDEB"/>
+    <SolidColorBrush x:Key="color5" Color="#E8E8E4"/>
+    <SolidColorBrush x:Key="color6" Color="#D8E2DC"/>
+    <SolidColorBrush x:Key="color7" Color="#ECE4DB"/>
+    <SolidColorBrush x:Key="color8" Color="#FFE5D9"/>
+    <SolidColorBrush x:Key="color9" Color="#FFD7BA"/>
+    <SolidColorBrush x:Key="color10" Color="#FEC89A"/>
+    <SolidColorBrush x:Key="colorgray1">#2a292a</SolidColorBrush>
+
+    <!-- FONT pallette-->
+      
+
+</ResourceDictionary>

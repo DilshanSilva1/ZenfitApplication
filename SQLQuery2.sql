@@ -1,0 +1,3 @@
+﻿ALTER TABLE Customers
+ADD HeightCM DECIMAL(5,2),
+    WeightKG DECIMAL(5,2)

@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationManifest>View\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="CustomControl\icons8-key-50.png" />
+    <None Remove="images\FitQuest %283%29.png" />
+    <None Remove="View\icons8-key-50.png" />
+    <None Remove="View\icons8-user-32.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="View\App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Include="View\App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome.Sharp" Version="6.6.0" />
+    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+    <PackageReference Include="LiveCharts" Version="0.9.7" />
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+    <PackageReference Include="LiveChartsCore.SkiaSharpView.WPF" Version="2.0.0-rc5.4" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+    <PackageReference Include="Twilio" Version="7.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="CustomControl\icons8-key-50.png" />
+    <Resource Include="View\icons8-key-50.png" />
+    <Resource Include="View\icons8-user-32.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="images\FitQuest (3).png" />
+  </ItemGroup>
+
+</Project>

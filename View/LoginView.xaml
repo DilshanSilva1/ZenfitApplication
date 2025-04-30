@@ -1,0 +1,241 @@
+﻿<Window x:Class="Draft2.View.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Draft2.View"
+        xmlns:viewModel="clr-namespace:Draft2.ViewModel" xmlns:customcontrol="clr-namespace:Draft2.CustomControl"
+        mc:Ignorable="d"
+        Title="LoginView" Height="550" Width="600"
+        WindowStyle="None" 
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown"
+        xmlns:awesome="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+       Icon="C:\Users\dilsh\Downloads\wetransfer_madina-zenfit_2024-11-03_0844\FitQuest (2).png">
+
+    <Window.DataContext>
+        <viewModel:LoginViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+    </Window.Resources>
+
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/>
+    </Window.Visibility>
+
+    <Border CornerRadius="12" Background="black" >
+
+        <Border CornerRadius="4"
+            Opacity="1"
+           
+            BorderThickness="0">
+            
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+
+                    <GradientStop Color="black"
+                                  Offset="4"/>
+                    <GradientStop Color="#2a292a" Offset="0"/>
+
+
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"
+                               ></RowDefinition>
+                    <RowDefinition ></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="25"></ColumnDefinition>
+                        <ColumnDefinition Width="25"
+                                          ></ColumnDefinition>
+                       
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="LOG IN"
+                               Foreground="white"
+                               FontSize="20"
+                               FontFamily="Haettenschweiler"
+                               Grid.Column="0"
+                               VerticalAlignment="Center"
+                               Margin="10,-10,0,0"
+                               />
+                </Grid>
+                <StackPanel x:Name="ControlMenu"
+                            Grid.Row="0"
+                            Orientation="Horizontal"
+                            Background="Transparent"
+                            Margin="0,-10,0,0"
+                            FlowDirection="RightToLeft"
+                            >
+                        <Button x:Name="closeButton" Width="30"
+                                Grid.Column="2"
+                                Height="25"
+                                Style="{StaticResource exitButton}"
+                                Tag="{StaticResource color1}"
+                                Click="closeButton_Click">
+                            <awesome:IconImage Icon="Xmark" Width="15"
+                                               Height="10"
+                                               Style="{StaticResource closeButtonIcon}"
+                            Foreground="{StaticResource color6}"/>
+
+                        </Button>
+                       
+                        <Button x:Name="minimizeButton" Width="30"
+                                Height="25"
+                                Grid.Column="1"
+                                Style="{StaticResource exitButton}"
+                                Tag="{StaticResource color1}"
+                                Click="minimizeButton_Click">
+                            <awesome:IconImage Icon="WindowMinimize" Width="15" Style="{StaticResource closeButtonIcon}"
+                                               Foreground="white"/>
+
+                        </Button>
+                    </StackPanel>
+
+
+
+             
+                <StackPanel Width="250"
+                            Grid.Row="2"
+                            Orientation="Vertical"
+                            Margin="0,0,0,0"
+                           >
+                    <Image Width="200" Height="150" Source="C:\Users\dilsh\Downloads\wetransfer_madina-zenfit_2024-11-03_0844\FitQuest (2).png" Stretch="UniformToFill">
+
+                    </Image>
+                    <TextBlock Text="ZENFIT"
+                               Foreground="White"
+                               HorizontalAlignment="Center"
+                               FontSize="25"
+                               
+                               FontFamily="Haettenschweiler"
+                               />
+                    <TextBlock Text="Healthier life Today"
+           Foreground="White"
+           HorizontalAlignment="Center"
+           FontSize="12"
+           FontWeight="ExtraLight"
+           FontFamily="Haettenschweiler"
+           />
+                    <TextBlock Text="USERNAME"
+Foreground="WHITE"
+HorizontalAlignment="Center"
+FontSize="12"
+FontWeight="ExtraLight"
+FontFamily="Haettenschweiler"
+                               Margin="-200,35,0,0"
+/>
+                    
+                    <TextBox x:Name="TBuser"
+                             Style="{StaticResource TBLOGIN}"
+                             Text="{Binding Username, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                             TextChanged="TBuser_TextChanged" KeyUp="TBuser_KeyUp">
+                        <TextBox.Background>
+                            <ImageBrush AlignmentX="Left" ImageSource="C:\Users\dilsh\Downloads\icons8-user-32.png" Stretch="Uniform" TileMode="None"/>
+                        </TextBox.Background>
+
+                    </TextBox>
+
+
+                    <TextBlock Text="Password"
+Foreground="White"
+HorizontalAlignment="Center"
+FontSize="12"
+FontWeight="ExtraLight"
+FontFamily="Haettenschweiler"
+                               Margin="-200,35,0,0"/>
+                    <customcontrol:BindablePasswordBox1 x:Name="PBpass" Height="28"
+Margin="0,5,0,0"
+Password="{Binding Password, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}">
+
+
+                    </customcontrol:BindablePasswordBox1>
+
+                    <TextBlock
+                        Text="{Binding ErrorMessage,UpdateSourceTrigger=PropertyChanged}"
+                        Foreground="White"
+                        HorizontalAlignment="Center"
+                        FontSize="12"
+                        FontWeight="ExtraLight"
+                        FontFamily="Haettenschweiler"
+                        Margin="0,10,0,0" 
+                        TextWrapping="Wrap">
+                    </TextBlock>
+                    <Button x:Name="btnLOGIN"
+                                Command="{Binding LoginCommand}"
+                               BorderThickness="0"
+                             Content="LOG IN"
+                               Foreground="White"
+                               FontSize="20"
+                               Cursor="Hand"
+                            Margin="0,30,0,0"
+                               Grid.Column="1"  FontFamily="Haettenschweiler" >
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#d53670"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#56eda8">
+
+                                        </Setter>
+
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="40"
+CornerRadius="20" 
+Background="{TemplateBinding Background}">
+
+                                    <ContentPresenter VerticalAlignment="Center"
+                  HorizontalAlignment="Center"/>
+
+                                </Border>
+
+
+                            </ControlTemplate>
+                        </Button.Template>
+
+
+
+                    </Button>
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                Margin="0,15,0,0">
+                        <TextBlock Text="Forgot Password?"
+Foreground="Gray"
+HorizontalAlignment="Left"
+FontSize="12"
+FontWeight="ExtraLight"
+FontFamily="Haettenschweiler"
+                             
+                               
+/>
+                        <TextBlock Text="Reset"
+Foreground="White"
+HorizontalAlignment="Left"
+FontSize="12"
+FontWeight="ExtraLight"
+FontFamily="Haettenschweiler"
+                               Margin="8,0,0,0"
+                            
+                               
+/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+
+        </Border>
+    </Border>
+</Window>
